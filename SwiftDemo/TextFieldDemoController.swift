@@ -24,8 +24,7 @@ class TextFieldDemoController: UIViewController, UITextFieldDelegate {
         self.amountTextField.delegate = self
         self.rateTextField.delegate = self
         
-        textFields.append(amountTextField)
-        textFields.append(rateTextField)
+        textFields = [amountTextField, rateTextField]
         
     }
 
