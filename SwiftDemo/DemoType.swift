@@ -25,7 +25,7 @@ enum DemoType: Int {
         case .Slider:
             dispayName = "Slider"
         case .Sound:
-            dispayName = "Sound"
+            dispayName = "Record and Play Sound"
         default:
             break;
         }

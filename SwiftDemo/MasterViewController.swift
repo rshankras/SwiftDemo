@@ -55,6 +55,8 @@ class MasterViewController: UITableViewController {
             controllerName = "TextFieldDemoController"
         case DemoType.Slider.rawValue:
             controllerName = "SliderDemoController"
+        case DemoType.Sound.rawValue:
+            controllerName = "SoundController"
         default:
             break;
         }

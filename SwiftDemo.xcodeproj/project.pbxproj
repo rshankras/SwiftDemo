@@ -18,6 +18,7 @@
 		48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584101AD2837A002728F8 /* TextFieldDemoController.swift */; };
 		48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584421AD29D62002728F8 /* SplitViewController.swift */; };
 		48A5844B1AD35C75002728F8 /* SliderDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5844A1AD35C75002728F8 /* SliderDemoController.swift */; };
+		48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F63D621AD80B6900F977D0 /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		48A584101AD2837A002728F8 /* TextFieldDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDemoController.swift; sourceTree = "<group>"; };
 		48A584421AD29D62002728F8 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		48A5844A1AD35C75002728F8 /* SliderDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoController.swift; sourceTree = "<group>"; };
+		48F63D621AD80B6900F977D0 /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				48A584441AD2BC96002728F8 /* App */,
 				48A584451AD2BC9F002728F8 /* SplitViewController */,
+				48F63D611AD80A4600F977D0 /* SoundDemo */,
 				48A584491AD35C47002728F8 /* SliderDemo */,
 				482B4B811AD2722F00823D63 /* TextFieldDemo */,
 				48465DA71AD259450073B0FB /* Supporting Files */,
@@ -165,6 +168,14 @@
 				48A5844A1AD35C75002728F8 /* SliderDemoController.swift */,
 			);
 			name = SliderDemo;
+			sourceTree = "<group>";
+		};
+		48F63D611AD80A4600F977D0 /* SoundDemo */ = {
+			isa = PBXGroup;
+			children = (
+				48F63D621AD80B6900F977D0 /* SoundController.swift */,
+			);
+			name = SoundDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				48465DAC1AD259450073B0FB /* DetailViewController.swift in Sources */,
 				48465DAA1AD259450073B0FB /* AppDelegate.swift in Sources */,
 				48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */,
+				48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */,
 				48465DCA1AD25A410073B0FB /* MasterViewController.swift in Sources */,
 				48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */,
 			);
