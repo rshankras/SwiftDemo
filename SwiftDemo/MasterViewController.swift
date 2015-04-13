@@ -33,7 +33,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         cell.textLabel?.text = demoTypes[indexPath.row]
 
@@ -69,7 +69,7 @@ class MasterViewController: UITableViewController {
         let controllerName = getControllerName(selectedRow)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(controllerName) as UIViewController
+        let viewController = storyboard.instantiateViewControllerWithIdentifier(controllerName) as! UIViewController
         
         return viewController
     }

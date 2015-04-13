@@ -34,7 +34,6 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
             soundRecorder.stop()
             sender.setTitle("Record", forState: .Normal)
         }
-        
     }
     
     @IBAction func playSound(sender: UIButton) {
@@ -65,7 +64,7 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
         
         var error: NSError?
         
-        soundRecorder = AVAudioRecorder(URL: getFileURL(), settings: recordSettings, error: &error)
+        soundRecorder = AVAudioRecorder(URL: getFileURL(), settings: recordSettings as [NSObject : AnyObject], error: &error)
         
         if let err = error {
             println("AVAudioRecorder error: \(err.localizedDescription)")
@@ -95,7 +94,7 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
     
     func getCacheDirectory() -> String {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true) as [String]
+        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true) as! [String]
         
         return paths[0]
     }
