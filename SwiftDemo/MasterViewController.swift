@@ -57,6 +57,8 @@ class MasterViewController: UITableViewController {
             controllerName = "SliderDemoController"
         case DemoType.Sound.rawValue:
             controllerName = "SoundController"
+        case DemoType.TwitterFollower.rawValue:
+            controllerName = "TwitterFollowerController"
         default:
             break;
         }

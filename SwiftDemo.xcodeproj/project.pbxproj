@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480800731ADD3FD000B8C85E /* TwitterServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480800721ADD3FD000B8C85E /* TwitterServiceWrapper.swift */; };
+		480800751ADDFD8500B8C85E /* TwitterFollowerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480800741ADDFD8500B8C85E /* TwitterFollowerController.swift */; };
+		4814CC041AE4C411009E0F6F /* TwitterFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CC031AE4C411009E0F6F /* TwitterFollower.swift */; };
 		48465DAA1AD259450073B0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465DA91AD259450073B0FB /* AppDelegate.swift */; };
 		48465DAC1AD259450073B0FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465DAB1AD259450073B0FB /* DetailViewController.swift */; };
 		48465DAF1AD259450073B0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48465DAD1AD259450073B0FB /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480800721ADD3FD000B8C85E /* TwitterServiceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterServiceWrapper.swift; sourceTree = "<group>"; };
+		480800741ADDFD8500B8C85E /* TwitterFollowerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterFollowerController.swift; sourceTree = "<group>"; };
+		4814CC031AE4C411009E0F6F /* TwitterFollower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterFollower.swift; sourceTree = "<group>"; };
 		48465DA41AD259450073B0FB /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48465DA81AD259450073B0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48465DA91AD259450073B0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480800711ADD3F4900B8C85E /* TwitterFollowers */ = {
+			isa = PBXGroup;
+			children = (
+				4814CC051AE565CC009E0F6F /* Service */,
+				4814CC021AE4C3FE009E0F6F /* Model */,
+				480800741ADDFD8500B8C85E /* TwitterFollowerController.swift */,
+			);
+			name = TwitterFollowers;
+			sourceTree = "<group>";
+		};
+		4814CC021AE4C3FE009E0F6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4814CC031AE4C411009E0F6F /* TwitterFollower.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4814CC051AE565CC009E0F6F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				480800721ADD3FD000B8C85E /* TwitterServiceWrapper.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		482B4B811AD2722F00823D63 /* TextFieldDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +134,7 @@
 				48F63D611AD80A4600F977D0 /* SoundDemo */,
 				48A584491AD35C47002728F8 /* SliderDemo */,
 				482B4B811AD2722F00823D63 /* TextFieldDemo */,
+				480800711ADD3F4900B8C85E /* TwitterFollowers */,
 				48465DA71AD259450073B0FB /* Supporting Files */,
 				48A584461AD2BCC5002728F8 /* Resources */,
 			);
@@ -280,12 +313,15 @@
 			files = (
 				48A5844B1AD35C75002728F8 /* SliderDemoController.swift in Sources */,
 				48465DCC1AD25ADD0073B0FB /* DemoType.swift in Sources */,
+				4814CC041AE4C411009E0F6F /* TwitterFollower.swift in Sources */,
 				48465DAC1AD259450073B0FB /* DetailViewController.swift in Sources */,
 				48465DAA1AD259450073B0FB /* AppDelegate.swift in Sources */,
 				48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */,
 				48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */,
 				48465DCA1AD25A410073B0FB /* MasterViewController.swift in Sources */,
+				480800751ADDFD8500B8C85E /* TwitterFollowerController.swift in Sources */,
 				48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */,
+				480800731ADD3FD000B8C85E /* TwitterServiceWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
