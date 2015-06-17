@@ -59,6 +59,8 @@ class MasterViewController: UITableViewController {
             controllerName = "SoundController"
         case DemoType.TwitterFollower.rawValue:
             controllerName = "TwitterFollowerController"
+        case DemoType.DatePicker.rawValue:
+            controllerName = "DatePickerController"
         default:
             break;
         }

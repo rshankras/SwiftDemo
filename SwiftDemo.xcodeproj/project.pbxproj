@@ -18,6 +18,7 @@
 		48465DC01AD259450073B0FB /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465DBF1AD259450073B0FB /* SwiftDemoTests.swift */; };
 		48465DCA1AD25A410073B0FB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465DC91AD25A410073B0FB /* MasterViewController.swift */; };
 		48465DCC1AD25ADD0073B0FB /* DemoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465DCB1AD25ADD0073B0FB /* DemoType.swift */; };
+		4881826F1B31A31000B9F4FD /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881826E1B31A31000B9F4FD /* DatePickerController.swift */; };
 		48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584101AD2837A002728F8 /* TextFieldDemoController.swift */; };
 		48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584421AD29D62002728F8 /* SplitViewController.swift */; };
 		48A5844B1AD35C75002728F8 /* SliderDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5844A1AD35C75002728F8 /* SliderDemoController.swift */; };
@@ -50,6 +51,7 @@
 		48465DBF1AD259450073B0FB /* SwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoTests.swift; sourceTree = "<group>"; };
 		48465DC91AD25A410073B0FB /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		48465DCB1AD25ADD0073B0FB /* DemoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoType.swift; sourceTree = "<group>"; };
+		4881826E1B31A31000B9F4FD /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		48A584101AD2837A002728F8 /* TextFieldDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDemoController.swift; sourceTree = "<group>"; };
 		48A584421AD29D62002728F8 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		48A5844A1AD35C75002728F8 /* SliderDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				48A584491AD35C47002728F8 /* SliderDemo */,
 				482B4B811AD2722F00823D63 /* TextFieldDemo */,
 				480800711ADD3F4900B8C85E /* TwitterFollowers */,
+				4881826D1B319F8400B9F4FD /* DatePicker */,
 				48465DA71AD259450073B0FB /* Supporting Files */,
 				48A584461AD2BCC5002728F8 /* Resources */,
 			);
@@ -164,6 +167,14 @@
 				48465DBE1AD259450073B0FB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4881826D1B319F8400B9F4FD /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4881826E1B31A31000B9F4FD /* DatePickerController.swift */,
+			);
+			name = DatePicker;
 			sourceTree = "<group>";
 		};
 		48A584441AD2BC96002728F8 /* App */ = {
@@ -320,6 +331,7 @@
 				48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */,
 				48465DCA1AD25A410073B0FB /* MasterViewController.swift in Sources */,
 				480800751ADDFD8500B8C85E /* TwitterFollowerController.swift in Sources */,
+				4881826F1B31A31000B9F4FD /* DatePickerController.swift in Sources */,
 				48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */,
 				480800731ADD3FD000B8C85E /* TwitterServiceWrapper.swift in Sources */,
 			);
