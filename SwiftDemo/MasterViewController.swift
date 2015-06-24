@@ -61,6 +61,8 @@ class MasterViewController: UITableViewController {
             controllerName = "TwitterFollowerController"
         case DemoType.DatePicker.rawValue:
             controllerName = "DatePickerController"
+        case DemoType.ProgressView.rawValue:
+            controllerName = "ProgressViewController"
         default:
             break;
         }

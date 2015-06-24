@@ -14,8 +14,9 @@ enum DemoType: Int {
     case Sound
     case TwitterFollower
     case DatePicker
+    case ProgressView
     
-    static let allValues = [TextField, Slider, Sound, TwitterFollower, DatePicker]
+    static let allValues = [TextField, Slider, Sound, TwitterFollower, DatePicker, ProgressView]
     
     func getDisplayName(type:DemoType) -> String {
         
@@ -32,6 +33,8 @@ enum DemoType: Int {
             dispayName = "Twitter Followers"
         case .DatePicker:
             dispayName = "DatePicker"
+        case .ProgressView:
+            dispayName = "ProgressView"
         default:
             break;
         }

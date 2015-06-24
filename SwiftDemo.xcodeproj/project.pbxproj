@@ -22,6 +22,7 @@
 		48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584101AD2837A002728F8 /* TextFieldDemoController.swift */; };
 		48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584421AD29D62002728F8 /* SplitViewController.swift */; };
 		48A5844B1AD35C75002728F8 /* SliderDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5844A1AD35C75002728F8 /* SliderDemoController.swift */; };
+		48B1A0361B3AD0800065385C /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1A0351B3AD0800065385C /* ProgressViewController.swift */; };
 		48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F63D621AD80B6900F977D0 /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		48A584101AD2837A002728F8 /* TextFieldDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDemoController.swift; sourceTree = "<group>"; };
 		48A584421AD29D62002728F8 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		48A5844A1AD35C75002728F8 /* SliderDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoController.swift; sourceTree = "<group>"; };
+		48B1A0351B3AD0800065385C /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		48F63D621AD80B6900F977D0 /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				482B4B811AD2722F00823D63 /* TextFieldDemo */,
 				480800711ADD3F4900B8C85E /* TwitterFollowers */,
 				4881826D1B319F8400B9F4FD /* DatePicker */,
+				48B1A0341B3AD0450065385C /* ProgressView */,
 				48465DA71AD259450073B0FB /* Supporting Files */,
 				48A584461AD2BCC5002728F8 /* Resources */,
 			);
@@ -212,6 +215,14 @@
 				48A5844A1AD35C75002728F8 /* SliderDemoController.swift */,
 			);
 			name = SliderDemo;
+			sourceTree = "<group>";
+		};
+		48B1A0341B3AD0450065385C /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				48B1A0351B3AD0800065385C /* ProgressViewController.swift */,
+			);
+			name = ProgressView;
 			sourceTree = "<group>";
 		};
 		48F63D611AD80A4600F977D0 /* SoundDemo */ = {
@@ -326,6 +337,7 @@
 				48465DCC1AD25ADD0073B0FB /* DemoType.swift in Sources */,
 				4814CC041AE4C411009E0F6F /* TwitterFollower.swift in Sources */,
 				48465DAC1AD259450073B0FB /* DetailViewController.swift in Sources */,
+				48B1A0361B3AD0800065385C /* ProgressViewController.swift in Sources */,
 				48465DAA1AD259450073B0FB /* AppDelegate.swift in Sources */,
 				48A584111AD2837A002728F8 /* TextFieldDemoController.swift in Sources */,
 				48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */,
