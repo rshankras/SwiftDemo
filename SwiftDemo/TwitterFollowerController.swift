@@ -56,9 +56,9 @@ class TwitterFollowerController: UITableViewController, TwitterFollowerDelegate 
     
     // MARK: - TwitterFollowerDelegate methods
     
-    func finishedDownloading(results: [TwitterFollower]) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.followers = results
+    func finishedDownloading(follower: TwitterFollower) {
+       dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.followers.append(follower)
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
             self.activityIndicator.hidden = true

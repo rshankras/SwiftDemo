@@ -23,6 +23,7 @@
 		48A584431AD29D62002728F8 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584421AD29D62002728F8 /* SplitViewController.swift */; };
 		48A5844B1AD35C75002728F8 /* SliderDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5844A1AD35C75002728F8 /* SliderDemoController.swift */; };
 		48B1A0361B3AD0800065385C /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1A0351B3AD0800065385C /* ProgressViewController.swift */; };
+		48F401661B6A88BD00629110 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F401651B6A88BD00629110 /* Default-568h@2x.png */; };
 		48F63D631AD80B6900F977D0 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F63D621AD80B6900F977D0 /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		48A584421AD29D62002728F8 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		48A5844A1AD35C75002728F8 /* SliderDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDemoController.swift; sourceTree = "<group>"; };
 		48B1A0351B3AD0800065385C /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		48F401651B6A88BD00629110 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		48F63D621AD80B6900F977D0 /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		48465D9B1AD259450073B0FB = {
 			isa = PBXGroup;
 			children = (
+				48F401651B6A88BD00629110 /* Default-568h@2x.png */,
 				48465DA61AD259450073B0FB /* SwiftDemo */,
 				48465DBC1AD259450073B0FB /* SwiftDemoTests */,
 				48465DA51AD259450073B0FB /* Products */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48465DAF1AD259450073B0FB /* Main.storyboard in Resources */,
+				48F401661B6A88BD00629110 /* Default-568h@2x.png in Resources */,
 				48465DB41AD259450073B0FB /* LaunchScreen.xib in Resources */,
 				48465DB11AD259450073B0FB /* Images.xcassets in Resources */,
 			);

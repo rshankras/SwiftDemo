@@ -9,16 +9,16 @@
 import Foundation
 
 protocol TwitterFollowerDelegate{
-    func finishedDownloading(results:[TwitterFollower])
+    func finishedDownloading(follower:TwitterFollower)
 }
 
 public class TwitterServiceWrapper:NSObject {
     
     var delegate:TwitterFollowerDelegate?
     
-    let consumerKey = "<consumer_key>" // replace consumer key
-    let consumerSecret = "consumer_secret" // replace consumer secret
-    let authURL = "https://api.twitter.com/oauth2/token"
+    let consumerKey = ""
+    let consumerSecret = ""
+    let authURL = ""
     
     // MARK:- Bearer Token
     
@@ -43,6 +43,7 @@ public class TwitterServiceWrapper:NSObject {
                 }
             }
         }).resume()
+
     }
     
     // MARK:- base64Encode String
@@ -93,14 +94,12 @@ public class TwitterServiceWrapper:NSObject {
         
         if let results: NSDictionary = NSJSONSerialization .JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments  , error: errorPointer) as? NSDictionary {
             
-            var followers: Array = [TwitterFollower]()
-            
             if var users = results["users"] as? NSMutableArray {
                 for user in users {
                     let follower = TwitterFollower(name: user["name"] as! String, url: user["profile_image_url"] as! String)
-                    followers.append(follower)
+                    self.delegate?.finishedDownloading(follower)
                 }
-                self.delegate?.finishedDownloading(followers)
+
             } else {
                 println(results["errors"])
             }
