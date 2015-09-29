@@ -45,7 +45,7 @@ class TwitterFollowerController: UITableViewController, TwitterFollowerDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) 
         
         let follower = followers[indexPath.row] as TwitterFollower
         cell.imageView?.image = UIImage(data: follower.profileURL!)

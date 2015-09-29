@@ -53,8 +53,8 @@ class TextFieldDemoController: UIViewController, UITextFieldDelegate {
     //MARK :- Calculation
     
     func calculateInterest() -> Double {
-        let amount: Double = (amountTextField.text as NSString).doubleValue
-        let rate:Double = (rateTextField.text as NSString).doubleValue
+        let amount: Double =  Double(amountTextField.text!)!
+        let rate:Double = Double(rateTextField.text!)!
         
         return amount * rate
     }

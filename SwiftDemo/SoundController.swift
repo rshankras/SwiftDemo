@@ -54,20 +54,23 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
         
         //set the settings for recorder
         
-        var recordSettings = [
-            AVFormatIDKey: kAudioFormatAppleLossless,
-            AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
-            AVEncoderBitRateKey : 320000,
-            AVNumberOfChannelsKey: 2,
-            AVSampleRateKey : 44100.0
-        ]
+        let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
+            AVFormatIDKey : NSNumber(int: Int32(kAudioFormatAppleLossless)),
+            AVNumberOfChannelsKey : NSNumber(int: 2),
+            AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Max.rawValue))];
         
         var error: NSError?
         
-        soundRecorder = AVAudioRecorder(URL: getFileURL(), settings: recordSettings as [NSObject : AnyObject], error: &error)
+        do {
+          //  soundRecorder = try AVAudioRecorder(URL: getFileURL(), settings: recordSettings as [NSObject : AnyObject])
+            soundRecorder =  try AVAudioRecorder(URL: getFileURL(), settings: recordSettings)
+        } catch let error1 as NSError {
+            error = error1
+            soundRecorder = nil
+        }
         
         if let err = error {
-            println("AVAudioRecorder error: \(err.localizedDescription)")
+            print("AVAudioRecorder error: \(err.localizedDescription)")
         } else {
             soundRecorder.delegate = self
             soundRecorder.prepareToRecord()
@@ -79,10 +82,15 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
     func preparePlayer() {
         var error: NSError?
         
-        soundPlayer = AVAudioPlayer(contentsOfURL: getFileURL(), error: &error)
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOfURL: getFileURL())
+        } catch let error1 as NSError {
+            error = error1
+            soundPlayer = nil
+        }
         
         if let err = error {
-            println("AVAudioPlayer error: \(err.localizedDescription)")
+            print("AVAudioPlayer error: \(err.localizedDescription)")
         } else {
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
@@ -94,39 +102,40 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
     
     func getCacheDirectory() -> String {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true) as! [String]
+        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true) 
         
         return paths[0]
     }
     
     func getFileURL() -> NSURL {
         
-        let path =  getCacheDirectory().stringByAppendingPathComponent(fileName)
+        let path = getCacheDirectory().stringByAppendingString(fileName)
+        
         let filePath = NSURL(fileURLWithPath: path)
         
-        return filePath!
+        return filePath
     }
     
     // MARK:- AVAudioPlayer delegate methods
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         recordButton.enabled = true
         playButton.setTitle("Play", forState: .Normal)
     }
     
-    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-        println("Error while playing audio \(error.localizedDescription)")
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
+        print("Error while playing audio \(error!.localizedDescription)")
     }
     
     // MARK:- AVAudioRecorder delegate methods
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         playButton.enabled = true
         recordButton.setTitle("Record", forState: .Normal)
     }
     
-    func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder!, error: NSError!) {
-        println("Error while recording audio \(error.localizedDescription)")
+    func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder, error: NSError?) {
+        print("Error while recording audio \(error!.localizedDescription)")
     }
     
     // MARK:- didReceiveMemoryWarning

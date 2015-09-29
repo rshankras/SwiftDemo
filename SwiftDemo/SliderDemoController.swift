@@ -52,7 +52,7 @@ class SliderDemoController: UIViewController {
             greenSliderValue.text = "\(sender.value)"
         }
         
-        var color: UIColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1.0))
+        let color: UIColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1.0))
         
         demoView.backgroundColor = color
     }

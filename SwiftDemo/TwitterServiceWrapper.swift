@@ -23,27 +23,30 @@ public class TwitterServiceWrapper:NSObject {
     // MARK:- Bearer Token
     
     func getBearerToken(completion:(bearerToken: String) ->Void) {
-        var request = NSMutableURLRequest(URL: NSURL(string: authURL)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: authURL)!)
         
         request.HTTPMethod = "POST"
         request.addValue("Basic " + getBase64EncodeString(), forHTTPHeaderField: "Authorization")
         request.addValue("application/x-www-form-urlencoded;charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        var grantType =  "grant_type=client_credentials"
+        let grantType =  "grant_type=client_credentials"
         
         request.HTTPBody = grantType.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
-        NSURLSession.sharedSession() .dataTaskWithRequest(request, completionHandler: { (data: NSData!, response:NSURLResponse!, error: NSError!) -> Void in
-            var errorPointer : NSErrorPointer = nil
+        NSURLSession.sharedSession() .dataTaskWithRequest(request, completionHandler: { (data: NSData?, response:NSURLResponse?, error: NSError?) -> Void in
             
-            if let results: NSDictionary = NSJSONSerialization .JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments  , error: errorPointer) as? NSDictionary {
-                if let token = results["access_token"] as? String {
-                    completion(bearerToken: token)
-                } else {
-                    println(results["errors"])
+            do {
+                if let results: NSDictionary = try NSJSONSerialization .JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments  ) as? NSDictionary {
+                    if let token = results["access_token"] as? String {
+                        completion(bearerToken: token)
+                    } else {
+                        print(results["errors"])
+                    }
                 }
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
         }).resume()
-
+        
     }
     
     // MARK:- base64Encode String
@@ -57,7 +60,7 @@ public class TwitterServiceWrapper:NSObject {
         
         let secretAndKeyData = concatenateKeyAndSecret.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
         
-        let base64EncodeKeyAndSecret = secretAndKeyData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.allZeros)
+        let base64EncodeKeyAndSecret = secretAndKeyData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
         
         return base64EncodeKeyAndSecret!
     }
@@ -66,20 +69,18 @@ public class TwitterServiceWrapper:NSObject {
     
     func getResponseForRequest(url:String) {
         
-        var results:NSDictionary
-        
         getBearerToken({ (bearerToken) -> Void in
-    
-            var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: url)!)
             request.HTTPMethod = "GET"
             
             let token = "Bearer " + bearerToken
             
             request.addValue(token, forHTTPHeaderField: "Authorization")
             
-            NSURLSession.sharedSession() .dataTaskWithRequest(request, completionHandler: { (data: NSData!, response:NSURLResponse!, error: NSError!) -> Void in
+            NSURLSession.sharedSession() .dataTaskWithRequest(request, completionHandler: { (data: NSData?, response:NSURLResponse?, error: NSError?) -> Void in
                 
-                self.processResult(data, response: response, error: error)
+                self.processResult(data!, response: response!, error: error)
                 
             }).resume()
         })
@@ -90,19 +91,22 @@ public class TwitterServiceWrapper:NSObject {
     
     func processResult(data: NSData, response:NSURLResponse, error: NSError?) {
         
-        var errorPointer : NSErrorPointer = nil
-        
-        if let results: NSDictionary = NSJSONSerialization .JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments  , error: errorPointer) as? NSDictionary {
+        do {
             
-            if var users = results["users"] as? NSMutableArray {
-                for user in users {
-                    let follower = TwitterFollower(name: user["name"] as! String, url: user["profile_image_url"] as! String)
-                    self.delegate?.finishedDownloading(follower)
+            if let results: NSDictionary = try NSJSONSerialization .JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments  ) as? NSDictionary {
+                
+                if let users = results["users"] as? NSMutableArray {
+                    for user in users {
+                        let follower = TwitterFollower(name: user["name"] as! String, url: user["profile_image_url"] as! String)
+                        self.delegate?.finishedDownloading(follower)
+                    }
+                    
+                } else {
+                    print(results["errors"])
                 }
-
-            } else {
-                println(results["errors"])
             }
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
 }

@@ -35,8 +35,6 @@ enum DemoType: Int {
             dispayName = "DatePicker"
         case .ProgressView:
             dispayName = "ProgressView"
-        default:
-            break;
         }
         return dispayName
     }
