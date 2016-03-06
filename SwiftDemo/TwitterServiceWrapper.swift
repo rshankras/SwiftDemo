@@ -18,12 +18,19 @@ public class TwitterServiceWrapper:NSObject {
     
     let consumerKey = ""
     let consumerSecret = ""
-    let authURL = ""
+    let host = ""
     
     // MARK:- Bearer Token
-    
     func getBearerToken(completion:(bearerToken: String) ->Void) {
-        let request = NSMutableURLRequest(URL: NSURL(string: authURL)!)
+        
+        let components = NSURLComponents() 
+        components.scheme = "https";
+        components.host = self.host
+        components.path = "/oauth2/token";
+        
+        let url = components.URL;
+        
+        let request = NSMutableURLRequest(URL:url!)
         
         request.HTTPMethod = "POST"
         request.addValue("Basic " + getBase64EncodeString(), forHTTPHeaderField: "Authorization")
@@ -49,12 +56,14 @@ public class TwitterServiceWrapper:NSObject {
         
     }
     
+    
     // MARK:- base64Encode String
     
     func getBase64EncodeString() -> String {
         
-        let consumerKeyRFC1738 = consumerKey.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
-        let consumerSecretRFC1738 = consumerSecret.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        let consumerKeyRFC1738 = consumerKey.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let consumerSecretRFC1738 = consumerSecret.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let concatenateKeyAndSecret = consumerKeyRFC1738! + ":" + consumerSecretRFC1738!
         

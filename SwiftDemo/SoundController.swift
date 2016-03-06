@@ -102,7 +102,7 @@ class SoundController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerD
     
     func getCacheDirectory() -> String {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true) 
+        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory,.UserDomainMask, true)
         
         return paths[0]
     }

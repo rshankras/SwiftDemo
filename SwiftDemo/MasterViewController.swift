@@ -51,6 +51,7 @@ class MasterViewController: UITableViewController {
         var controllerName: String = "DetailViewController"
         
         switch (selectedRow) {
+ 
         case DemoType.TextField.rawValue:
             controllerName = "TextFieldDemoController"
         case DemoType.Slider.rawValue:
